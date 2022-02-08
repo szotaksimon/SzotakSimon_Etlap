@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szotaksimon_etlap.KategoriaHozzaAdWindowController">
+    <children>
+        <HBox alignment="CENTER">
+            <children>
+                <Label text="Név">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="kategoriaNevInput" prefWidth="180.0" promptText="Kategória neve">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+            </children>
+            <VBox.margin>
+                <Insets bottom="15.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </HBox>
+        <Button mnemonicParsing="false" onAction="#kategoriaHozzaadasButtonClick" prefHeight="30.0" prefWidth="220.0" text="Hozzáadás">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>

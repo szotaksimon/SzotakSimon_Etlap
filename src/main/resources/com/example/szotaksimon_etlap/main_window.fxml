@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="530.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szotaksimon_etlap.MainWindowController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <HBox>
+            <children>
+                <Button mnemonicParsing="false" onAction="#felvetelButtonClick" prefWidth="100.0" text="Új étel felvétele">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#torlesButtonCLick" prefWidth="100.0" text="Törlés">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin></Button>
+                <Button layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#kategoriakButtonCLick" prefWidth="100.0" text="Kategóriák" />
+            </children>
+        </HBox>
+        <Accordion>
+            <panes>
+                <TitledPane animated="false" text="Áremelés">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Spinner fx:id="szazalekSpinner" layoutX="14.0" layoutY="22.0">
+                                    <valueFactory>
+                                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="5" initialValue="5" max="50" min="5" />
+                                    </valueFactory>
+                                </Spinner>
+                                <Spinner fx:id="forintSpinner" amountToStepBy="50" initialValue="50" layoutX="14.0" layoutY="58.0" max="3000" min="50" />
+                                <Label layoutX="171.0" layoutY="26.0" text="\%" />
+                                <Label layoutX="171.0" layoutY="62.0" text="Ft" />
+                                <Button layoutX="244.0" layoutY="22.0" mnemonicParsing="false" onAction="#szazelekEmelesButtonClick" text="Emelés" />
+                                <Button layoutX="244.0" layoutY="58.0" mnemonicParsing="false" onAction="#forintEmelesButtonClick" text="Emelés" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+        <HBox>
+            <children>
+                <ChoiceBox fx:id="szuresKategoriaChoiceBox" prefWidth="150.0" />
+            </children>
+        </HBox>
+        <TableView fx:id="etelTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="colNev" prefWidth="75.0" text="Név" />
+                <TableColumn fx:id="colKategoria" prefWidth="75.0" text="Kategória" />
+                <TableColumn fx:id="colAr" prefWidth="75.0" text="Ár (Ft)" />
+            </columns>
+        </TableView>
+        <TextField fx:id="tfKivalasztott" prefHeight="100.0" />
+    </children>
+</VBox>
